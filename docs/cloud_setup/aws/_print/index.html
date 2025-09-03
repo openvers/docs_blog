@@ -1,0 +1,634 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=canonical type=text/html href=https://openvers.github.io/docs_blog/docs/cloud_setup/aws/><link rel=alternate type=application/rss+xml href=https://openvers.github.io/docs_blog/docs/cloud_setup/aws/index.xml><meta name=robots content="noindex, nofollow"><link rel="shortcut icon" href=/docs_blog/favicons/favicon.ico><link rel=apple-touch-icon href=/docs_blog/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/docs_blog/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/docs_blog/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/docs_blog/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/docs_blog/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/docs_blog/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/docs_blog/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/docs_blog/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/docs_blog/favicons/android-192x192.png sizes=192x192><title>Amazon Web Services (AWS) | OpenVERS</title><meta name=description content="AWS - The premier and longest standing cloud computing platform provided by Amazon.
+"><meta property="og:title" content="Amazon Web Services (AWS)"><meta property="og:description" content="AWS - The premier and longest standing cloud computing platform provided by Amazon.
+"><meta property="og:type" content="website"><meta property="og:url" content="https://openvers.github.io/docs_blog/docs/cloud_setup/aws/"><meta property="og:site_name" content="OpenVERS"><meta itemprop=name content="Amazon Web Services (AWS)"><meta itemprop=description content="AWS - The premier and longest standing cloud computing platform provided by Amazon.
+"><meta name=twitter:card content="summary"><meta name=twitter:title content="Amazon Web Services (AWS)"><meta name=twitter:description content="AWS - The premier and longest standing cloud computing platform provided by Amazon.
+"><link rel=preload href=/docs_blog/scss/main.min.44e056411013bf8f18a255176cfb0420600587168abb56228837c1f35a8df1c0.css as=style><link href=/docs_blog/scss/main.min.44e056411013bf8f18a255176cfb0420600587168abb56228837c1f35a8df1c0.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.7.1.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin=anonymous></script></head><body class=td-section><header><nav class="td-navbar js-navbar-scroll" data-bs-theme=dark><div class="container-fluid flex-column flex-md-row"><a class=navbar-brand href=/docs_blog/><span class="navbar-brand__logo navbar-logo"><svg width="128" height="128" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>OpenVERS Icon - White Background</title><desc>A dimensional icon for Open Data Versatility with a white background circle. It features an open deep blue ring and three bright teal lines with an enhanced extruded effect suggesting depth.</desc><style>.fill-none{fill:none}.stroke-linecap-round{stroke-linecap:round}.circle-main-style{stroke:#3b4856;stroke-width:10}.circle-depth-style{stroke:#072a5c;stroke-width:10}.line-main-style{stroke:#009cff;stroke-width:8}.line-depth-style{stroke:#007a8a;stroke-width:8}.line-accent-shadow-style{stroke:#005f6b;stroke-width:2}.bg-circle-style{fill:#fff}</style><circle class="bg-circle-style" cx="50" cy="50" r="50"/><path d="M86.5 51.5a35 35 0 11-35-35" class="fill-none stroke-linecap-round circle-depth-style"/><path d="M85 50A35 35 0 1150 15" class="fill-none stroke-linecap-round circle-main-style"/><g class="fill-none stroke-linecap-round line-accent-shadow-style"><line x1="52.5" y1="52.5" x2="79.5" y2="25.5"/><line x1="52.5" y1="52.5" x2="26.5" y2="37.5"/><line x1="52.5" y1="52.5" x2="52.5" y2="82.5"/></g><g class="fill-none stroke-linecap-round line-depth-style"><line x1="51.5" y1="51.5" x2="78.5" y2="24.5"/><line x1="51.5" y1="51.5" x2="25.5" y2="36.5"/><line x1="51.5" y1="51.5" x2="51.5" y2="81.5"/></g><g class="fill-none stroke-linecap-round line-main-style"><line x1="50" y1="50" x2="77" y2="23"/><line x1="50" y1="50" x2="24" y2="35"/><line x1="50" y1="50" x2="50" y2="80"/></g></svg></span><span class=navbar-brand__name>OpenVERS</span></a><div class="td-navbar-nav-scroll ms-md-auto" id=main_navbar><ul class=navbar-nav><li class=nav-item><a class=nav-link href=/docs_blog/about/><span>About</span></a></li><li class=nav-item><a class=nav-link href=/docs_blog/blog/><span>Blog</span></a></li><li class=nav-item><a class=nav-link href=/docs_blog/community/><span>Community</span></a></li></ul></div><div class="d-none d-lg-block"><div class=td-search><div class=td-search__icon></div><input type=search class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete=off></div></div></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><main class="col-12 col-md-9 col-xl-8 ps-md-5" role=main><div class=td-content><div class="pageinfo pageinfo-primary d-print-none"><p>This is the multi-page printable view of this section.
+<a href=# onclick="return print(),!1">Click here to print</a>.</p><p><a href=/docs_blog/docs/cloud_setup/aws/>Return to the regular view of this page</a>.</p></div><h1 class=title>Amazon Web Services (AWS)</h1><div class=lead>AWS - The premier and longest standing cloud computing platform provided by Amazon.</div><ul><li>1: <a href=#pg-de7870d69afa943e168922a0fd5a7a72>Account Setup</a></li><li>2: <a href=#pg-3e4fabc8274bcec82d993873a23131d2>Terraform Backend</a></li><li>3: <a href=#pg-1d14e8c6f158f84d87904be72d1a74c4>OpenID Connect</a></li></ul><div class=content><p>AWS (Amazon Web Services) is a comprehensive cloud computing platform provided by Amazon that offers a wide range of services, including computing, storage, databases, analytics, machine learning, and more. AWS allows data practioners to build, deploy, and manage applications and workloads in a flexible, scalable, and secure manner on their cloud platform. When setting up AWS for the first time, security requirements are essential for data practitioners to ensure the confidentiality and integrity their data and applications. Without proper security measures in place, sensitive data can be exposed to unauthorized access, but more dangerous to the hobbyist is the exposure to malicious activities when credentials are compromised. It&rsquo;s crucial to implement security best practices, such as identity and access management (IAM), authentication and authorization controls, and network security to protect against potential threats. By prioritizing security requirements from the outset, data practitioners can prevent common security mistakes such as misconfigured S3 buckets, overly permissive IAM policies, and account credential breaches.</p><h1 id=getting-started>Getting Started<a class=td-heading-self-link href=#getting-started aria-label="Heading self-link"></a></h1><p>The <strong>AWS CLI</strong> tool is a powerful utility that allows users to interact with AWS services from the command line, and enabling them to manage and automate various tasks such as creating/ managing resources or configuring services. Please visit the <a href=https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html>Official AWS CLI Installing Instructions</a> to review the install steps. For additional CLI support for AWS, please also consider downloading/ installing <a href=https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html>AWS SAM CLI</a> for local debugging, and <a href=https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html>AWS Toolkit for Visual Studio Code</a> for creating function templates and accelerating build and debug purposes.</p></div></div><div class=td-content style=page-break-before:always><h1 id=pg-de7870d69afa943e168922a0fd5a7a72>1 - Account Setup</h1><div class=lead>AWS - New Account Setup with Critical Security Measures Applied as First Priority.</div><h2 id=setup-new-account>Setup New Account<a class=td-heading-self-link href=#setup-new-account aria-label="Heading self-link"></a></h2><p>Creating an AWS account can be done free of charge. More details about registering with AWS can be found at their <a href=https://aws.amazon.com/resources/create-account/>New Account Instructions</a> web page. We also need to keep in mind securing protective measures against our newly created users to protect our resources and data from possible breaches and mailicous actors, and therefore we follow some elementary guidelines documented by AWS for securing new user setup.</p><h3 id=aws-organization>AWS Organization<a class=td-heading-self-link href=#aws-organization aria-label="Heading self-link"></a></h3><p>Enable AWS Organizations following <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html>Instructions Here</a>. This does not require additional funding, and is a requirement for the next step.</p><h3 id=iam-identity-center>IAM Identity Center<a class=td-heading-self-link href=#iam-identity-center aria-label="Heading self-link"></a></h3><p>Before we begin creating new users, we should enable SSO login into AWS Console for our account. This can be done by <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html>Enabling IAM Identity Center</a>.</p><ul><li><p><a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html#:~:text=To%20add%20a%20user&amp;text=Choose%20Users.,can't%20be%20changed%20later.">Add IAM Identity User</a> to send invite to your root user email</p></li><li><p>Include configuration for <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/assignusers.html>Multi-Account Permissions AWS Accounts</a> to assign user to newly created AWS Account. Proceed to include the permission sets with pre-defined <strong>AdministratorAccess</strong>.</p></li><li><p>Navigate to Users and send invite via email. Proceed to check invite from email and setup MFA authentication.</p></li></ul><h3 id=cli-access-for-usersdevelopers>CLI Access for Users/Developers<a class=td-heading-self-link href=#cli-access-for-usersdevelopers aria-label="Heading self-link"></a></h3><ul class="nav nav-tabs justify-content-end" id=tabs-0 role=tablist><li class=nav-item><button class="nav-link disabled" id=tabs-00-00-tab data-bs-toggle=tab data-bs-target=#tabs-00-00 role=tab aria-controls=tabs-00-00 aria-selected=false>
+<strong>Examples</strong>:</button></li><li class=nav-item><button class="nav-link active" id=tabs-00-01-tab data-bs-toggle=tab data-bs-target=#tabs-00-01 role=tab data-td-tp-persist=shell aria-controls=tabs-00-01 aria-selected=true>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI</button></li></ul><div class=tab-content id=tabs-0-content><div class="tab-pane fade" id=tabs-00-00 role=tabpanel aria-labelled-by=tabs-00-00-tab tabindex=0><pre tabindex=0><code></code></pre></div><div class="tab-pane fade show active" id=tabs-00-01 role=tabpanel aria-labelled-by=tabs-00-01-tab tabindex=0><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># Configure &amp; Login to AWS root account</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># </span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># SSO session name (Recommended): my-sso</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># SSO start URL [None]: [COPY/PASTE FROM IAM Identity Center -&gt; Settings -&gt; Identity Source -&gt; AWS access portal URL]</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># SSO region [None]: us-east-1</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># SSO registration scopes [None]: sso:account:access</span>
+</span></span><span style=display:flex><span>  <span style=color:#8f5902;font-style:italic># CLI profile name [PermissionSet-AWS_Account]: sso-admin</span>
+</span></span><span style=display:flex><span>  aws configure sso
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  aws sso login --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div></div><p>Remember! You can always find your IAM Identity Center Access Portal in the CLI after logging in.</p><h2 id=service-principal-programmatic-access>Service Principal (Programmatic Access)<a class=td-heading-self-link href=#service-principal-programmatic-access aria-label="Heading self-link"></a></h2><p>To enable programmatic access to AWS resources, you can create a Service Principal using either:</p><ul><li>An IAM User with programmatic access (requires long-term access keys), or</li><li>An IAM Role, which can be assumed to obtain short-term credentials (no long-term secret required).</li></ul><p>For most automation and service-to-service scenarios, AWS recommends using IAM Roles and short-term credentials. These credentials are generated dynamically and do not require you to manage or rotate long-term secrets.</p><h3 id=programmatic-steps>Programmatic Steps<a class=td-heading-self-link href=#programmatic-steps aria-label="Heading self-link"></a></h3><ul class="nav nav-tabs justify-content-end" id=tabs-1 role=tablist><li class=nav-item><button class="nav-link disabled" id=tabs-01-00-tab data-bs-toggle=tab data-bs-target=#tabs-01-00 role=tab aria-controls=tabs-01-00 aria-selected=false>
+<strong>Examples</strong>:</button></li><li class=nav-item><button class="nav-link active" id=tabs-01-01-tab data-bs-toggle=tab data-bs-target=#tabs-01-01 role=tab data-td-tp-persist=shell aria-controls=tabs-01-01 aria-selected=true>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI</button></li></ul><div class=tab-content id=tabs-1-content><div class="tab-pane fade" id=tabs-01-00 role=tabpanel aria-labelled-by=tabs-01-00-tab tabindex=1><pre tabindex=0><code></code></pre></div><div class="tab-pane fade show active" id=tabs-01-01 role=tabpanel aria-labelled-by=tabs-01-01-tab tabindex=1><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_CURRENT_IDENTITY</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws sts get-caller-identity <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_INSTANCE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws sso-admin list-instances <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_CURRENT_USER</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_CURRENT_IDENTITY</span> <span style=color:#000;font-weight:700>|</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  jq -r <span style=color:#4e9a06>&#39;.UserId&#39;</span> <span style=color:#000;font-weight:700>|</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  cut -d<span style=color:#4e9a06>&#39;:&#39;</span> -f2<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_IDENTITY_STORE_ID</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_INSTANCE</span> <span style=color:#000;font-weight:700>|</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  jq -r <span style=color:#4e9a06>&#39;.Instances[0].IdentityStoreId&#39;</span><span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_CURRENT_PRINCIPAL</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws identitystore list-users <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>--identity-store-id <span style=color:#000>$AWS_SSO_IDENTITY_STORE_ID</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>--query<span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#39;Users&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>--profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin <span style=color:#000;font-weight:700>|</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  jq -r --arg user <span style=color:#000>$AWS_SSO_CURRENT_USER</span> <span style=color:#4e9a06>&#39;map(select(.UserName | contains($user)))[0]&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># 1. Create a new IAM Identity Center Permission Set</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sso-admin/create-permission-set.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_SSO_PERMISSION_SET</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws sso-admin create-permission-set <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --instance-arn <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_INSTANCE</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.Instances[0].InstanceArn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --name <span style=color:#4e9a06>&#34;ExampleCustomViewerPermissionSet&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --description <span style=color:#4e9a06>&#34;Example viewer permissions for my team&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --session-duration <span style=color:#4e9a06>&#34;PT8H&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span><span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># 2. Attach a Managed Policy</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sso-admin/attach-managed-policy-to-permission-set.html</span>
+</span></span><span style=display:flex><span>aws sso-admin attach-managed-policy-to-permission-set <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --instance-arn <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_INSTANCE</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.Instances[0].InstanceArn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --permission-set-arn <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_PERMISSION_SET</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.PermissionSetArn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --managed-policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># 3. Assign Account Access and Permissions to User</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sso-admin/create-account-assignment.html</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># This is for for example purposes as normally you would not</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># assigning yourself permissions as an administrator</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws sso-admin create-account-assignment <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --instance-arn <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_INSTANCE</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.Instances[0].InstanceArn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --target-type ACCOUNT <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --target-id <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_CURRENT_IDENTITY</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.AccountId&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --principal-type USER <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --principal-id <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_CURRENT_PRINCIPAL</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.Arn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --permission-set-arn <span style=color:#204a87;font-weight:700>$(</span><span style=color:#204a87>echo</span> <span style=color:#000>$AWS_SSO_PERMISSION_SET</span> <span style=color:#000;font-weight:700>|</span> jq -r <span style=color:#4e9a06>&#39;.PermissionSetArn&#39;</span><span style=color:#204a87;font-weight:700>)</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div></div><h3 id=console-steps>Console Steps<a class=td-heading-self-link href=#console-steps aria-label="Heading self-link"></a></h3><p>To assign permissions to SSO-enabled users in AWS, use AWS IAM Identity Center (formerly AWS SSO). This approach is recommended for organizations using SSO, as it centralizes access management and leverages short-term credentials for improved security.</p><p>Start by <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/howtocreatepermissionset.html>Creating a Permission Set</a> - name this new Permission Set <strong>ExampleCustomViewerPermissionSet</strong>, and select the *<em>ViewOnlyAccess</em> <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetcustom.html#permissionsetsampconcept>Managed Policy</a> to grant this Permission set with view only access.</p><p>Next, <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/user-assignments.html>Assigning Users</a> to this Permission Set and AWS Account combination to allow users to sign-on assuming these permissions through SSO login. For more information, see <a href=https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html>User Guide for AWS IAM Identity Center</a> or</p><ul><li><a href=https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html>Create Account Assignment</a></li><li><a href=https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreatePermissionSet.html>Create Permission Sets</a></li><li><a href=https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachManagedPolicyToPermissionSet.html>Attach Managed Policies to Permission Sets</a></li></ul><h2 id=legacy-account-setup>Legacy Account Setup<a class=td-heading-self-link href=#legacy-account-setup aria-label="Heading self-link"></a></h2><p>If we do not want to enable AWS Identity Center, and utilize SSO for CLI authentication, then we can also restrict AWS IAM Account access to developer machines only. These steps are also useful for creating Service Accounts required by AWS Services (not to be used by developers).</p><h3 id=cli-steps>CLI Steps<a class=td-heading-self-link href=#cli-steps aria-label="Heading self-link"></a></h3><ul class="nav nav-tabs justify-content-end" id=tabs-2 role=tablist><li class=nav-item><button class="nav-link disabled" id=tabs-02-00-tab data-bs-toggle=tab data-bs-target=#tabs-02-00 role=tab aria-controls=tabs-02-00 aria-selected=false>
+<strong>Examples</strong>:</button></li><li class=nav-item><button class="nav-link active" id=tabs-02-01-tab data-bs-toggle=tab data-bs-target=#tabs-02-01 role=tab data-td-tp-persist=shell aria-controls=tabs-02-01 aria-selected=true>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI</button></li><li class=nav-item><button class=nav-link id=tabs-02-02-tab data-bs-toggle=tab data-bs-target=#tabs-02-02 role=tab aria-controls=tabs-02-02 aria-selected=false>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI (Destroy) icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI (Destroy)</button></li><li class=nav-item><button class=nav-link id=tabs-02-03-tab data-bs-toggle=tab data-bs-target=#tabs-02-03 role=tab data-td-tp-persist=hcl aria-controls=tabs-02-03 aria-selected=false>
+<span style=vertical-align:middle><img src=https://cdn.simpleicons.org/terraform/5835CC alt="Terraform icon" style=height:1em;vertical-align:middle;margin-right:.3em></span>
+Terraform</button></li></ul><div class=tab-content id=tabs-2-content><div class="tab-pane fade" id=tabs-02-00 role=tabpanel aria-labelled-by=tabs-02-00-tab tabindex=2><pre tabindex=0><code></code></pre></div><div class="tab-pane fade show active" id=tabs-02-01 role=tabpanel aria-labelled-by=tabs-02-01-tab tabindex=2><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_ACCOUNT</span><span style=color:#ce5c00;font-weight:700>=[</span>INSERT AWS ACCOUNT ID<span style=color:#ce5c00;font-weight:700>]</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>DEVELOPER_IP_CIDR</span><span style=color:#ce5c00;font-weight:700>=[</span>INSERT IP CIDR<span style=color:#ce5c00;font-weight:700>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**1. <span style=color:#ce5c00;font-weight:700>(</span>Optional<span style=color:#ce5c00;font-weight:700>)</span> Create an IP Restriction Policy**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat &gt; ip-restrict-policy.json <span style=color:#4e9a06>&lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>{
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Statement&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Deny&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;NotAction&#34;: &#34;iam:*&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Resource&#34;: &#34;*&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Condition&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;NotIpAddress&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>          &#34;aws:SourceIp&#34;: &#34;${DEVELOPER_IP_CIDR}&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  ]
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOF</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Create the policy:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam create-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-name IPRestrictPolicy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-document file://ip-restrict-policy.json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**2. Create the Service Principal <span style=color:#ce5c00;font-weight:700>(</span>IAM User<span style=color:#ce5c00;font-weight:700>)</span>**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam create-user --user-name my-example-legacy-principal
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**3. Attach the IP Restriction Policy <span style=color:#ce5c00;font-weight:700>(</span><span style=color:#204a87;font-weight:700>if</span> created<span style=color:#ce5c00;font-weight:700>)</span> and IAMFullAccess**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam attach-user-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --user-name my-example-legacy-principal <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn arn:aws:iam::<span style=color:#4e9a06>${</span><span style=color:#000>AWS_ACCOUNT</span><span style=color:#4e9a06>}</span>:policy/IAMFullAccess
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># If you created the custom IP restriction policy, attach it as well:</span>
+</span></span><span style=display:flex><span>aws iam attach-user-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --user-name my-example-legacy-principal <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn arn:aws:iam::<span style=color:#4e9a06>${</span><span style=color:#000>AWS_ACCOUNT</span><span style=color:#4e9a06>}</span>:policy/IPRestrictPolicy
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**4. Create Access Keys <span style=color:#204a87;font-weight:700>for</span> CLI Use**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam create-access-key --user-name my-example-legacy-principal
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Save the AccessKeyId and SecretAccessKey securely for CLI configuration.</span></span></span></code></pre></div></div><div class="tab-pane fade" id=tabs-02-02 role=tabpanel aria-labelled-by=tabs-02-02-tab tabindex=2><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span>**1. Detach Policies from the User**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam detach-user-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --user-name my-example-legacy-principal <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn arn:aws:iam::<span style=color:#4e9a06>${</span><span style=color:#000>AWS_ACCOUNT</span><span style=color:#4e9a06>}</span>:policy/IAMFullAccess
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam detach-user-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --user-name my-example-legacy-principal <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn arn:aws:iam::<span style=color:#4e9a06>${</span><span style=color:#000>AWS_ACCOUNT</span><span style=color:#4e9a06>}</span>:policy/IPRestrictPolicy
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**3. Delete the User**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-user --user-name my-example-legacy-principal
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>**4. <span style=color:#ce5c00;font-weight:700>(</span>Optional<span style=color:#ce5c00;font-weight:700>)</span> Delete the Custom Policy**
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn arn:aws:iam::<span style=color:#4e9a06>${</span><span style=color:#000>AWS_ACCOUNT</span><span style=color:#4e9a06>}</span>:policy/IPRestrictPolicy</span></span></code></pre></div></div><div class="tab-pane fade" id=tabs-02-03 role=tabpanel aria-labelled-by=tabs-02-03-tab tabindex=2><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-HCL data-lang=HCL><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## ---------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## AWS PROVIDER
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## Configures the AWS provider with CLI Configured Authentication.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## ---------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic></span><span style=color:#204a87;font-weight:700>provider</span> <span style=color:#4e9a06>&#34;aws&#34;</span> {
+</span></span><span style=display:flex><span><span style=color:#000>  alias</span>   <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;accountgen&#34;</span>
+</span></span><span style=display:flex><span>}<span style=color:#8f5902;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##---------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## AWS SERVICE ACCOUNT MODULE
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## This module provisions an AWS service account along with associated roles and security groups.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## - `service_account_name`: The display name of the new AWS Service Account.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## - `service_account_path`: The new AWS Service Account IAM Path.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## - `roles_list`: List of IAM roles to bing to new AWS Service Account.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## Providers:
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>## - `aws.accountgen`: Alias for the AWS provider for generating service accounts.
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic>##---------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic></span><span style=color:#204a87;font-weight:700>module</span> <span style=color:#4e9a06>&#34;aws_service_account&#34;</span> {
+</span></span><span style=display:flex><span><span style=color:#000>  source</span>  <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;github.com/sim-parables/terraform-aws-service-account&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#000>  service_account_name</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;legacy-service-account&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>  service_account_path</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;example&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#000>  providers</span> <span style=color:#ce5c00;font-weight:700>=</span> {
+</span></span><span style=display:flex><span><span style=color:#000>    aws.accountgen</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#204a87;font-weight:700>aws</span><span style=color:#000;font-weight:700>.</span><span style=color:#204a87;font-weight:700>accountgen</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}</span></span></code></pre></div></div></div><h3 id=console-steps-1>Console Steps<a class=td-heading-self-link href=#console-steps-1 aria-label="Heading self-link"></a></h3><h4 id=security-policy>Security Policy<a class=td-heading-self-link href=#security-policy aria-label="Heading self-link"></a></h4><p>Create a new Policy with <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-ip.html>IP Restrictions</a> so only users in our security group can interact with AWS. This is helpful incase our security tokens are compromised, so even with unauthorized use malicuous actors still wont be able to access our AWS account on another IP address.</p><h4 id=iam-group>IAM Group<a class=td-heading-self-link href=#iam-group aria-label="Heading self-link"></a></h4><p>Create a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html>New IAM Group</a> which we can bind the IP Whitelist policy above to.</p><h4 id=iam-user>IAM User<a class=td-heading-self-link href=#iam-user aria-label="Heading self-link"></a></h4><p>Create a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console>New IAM User</a> <strong>Without</strong> access to AWS Management Console - this user should only be able to access AWS through CLI.</p><ul><li><p><a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console>Add User</a> to the the new IAM Group to bind the IP Whitelist policy</p></li><li><p>Add the <code>IAMFullAccess</code> role to this user&rsquo;s <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console>Permissions</a></p></li><li><p>Create a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey>CLI Access Credentials</a>, and don&rsquo;t leave page until the Shared Credentials have been completed in the following steps</p></li></ul></div><div class=td-content style=page-break-before:always><h1 id=pg-3e4fabc8274bcec82d993873a23131d2>2 - Terraform Backend</h1><div class=lead>AWS - Optional Configurations When Not Using Terraform.io Workspace Backends.</div><h1 id=terrafrom-backend-with-aws>Terrafrom Backend with AWS<a class=td-heading-self-link href=#terrafrom-backend-with-aws aria-label="Heading self-link"></a></h1><p>Using AWS as the backend for Terraform state is another versatile option for managing infrastructure as code. By storing Terraform state in an AWS S3 bucket, teams can take advantage of AWS&rsquo;s robust security features, such as encryption at rest and in transit, access controls, and versioning. Additionally, AWS S3 provides a highly durable and available storage solution, ensuring that Terraform state is always accessible and up-to-date. Furthermore, by using AWS as the backend, teams can also leverage AWS IAM to manage access to the Terraform state, allowing for fine-grained control over who can read and write to the state file. This setup also enables teams to use AWS services such as AWS Lambda and AWS CloudWatch to automate and monitor their Terraform workflows, providing a seamless and integrated experience for managing infrastructure as code.</p><h2 id=cli-steps>CLI Steps<a class=td-heading-self-link href=#cli-steps aria-label="Heading self-link"></a></h2><ul class="nav nav-tabs justify-content-end" id=tabs-0 role=tablist><li class=nav-item><button class="nav-link disabled" id=tabs-00-00-tab data-bs-toggle=tab data-bs-target=#tabs-00-00 role=tab aria-controls=tabs-00-00 aria-selected=false>
+<strong>Examples</strong>:</button></li><li class=nav-item><button class="nav-link active" id=tabs-00-01-tab data-bs-toggle=tab data-bs-target=#tabs-00-01 role=tab data-td-tp-persist=shell aria-controls=tabs-00-01 aria-selected=true>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI (Create) icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI (Create)</button></li><li class=nav-item><button class=nav-link id=tabs-00-02-tab data-bs-toggle=tab data-bs-target=#tabs-00-02 role=tab aria-controls=tabs-00-02 aria-selected=false>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI (Destroy) icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI (Destroy)</button></li></ul><div class=tab-content id=tabs-0-content><div class="tab-pane fade" id=tabs-00-00 role=tabpanel aria-labelled-by=tabs-00-00-tab tabindex=0><pre tabindex=0><code></code></pre></div><div class="tab-pane fade show active" id=tabs-00-01 role=tabpanel aria-labelled-by=tabs-00-01-tab tabindex=0><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span>mkdir -p ~/development/test/example_aws_tf_backend
+</span></span><span style=display:flex><span><span style=color:#204a87>cd</span> ~/development/test/example_aws_tf_backend
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Setting</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_S3_BUCKET</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>openssl rand -hex 4<span style=color:#204a87;font-weight:700>)</span>-example-tf-state-bucket
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_S3_BUCKET_PATH</span><span style=color:#ce5c00;font-weight:700>=</span>sandbox/terraform.tfstate
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_DYNAMODB_TABLE</span><span style=color:#ce5c00;font-weight:700>=</span>sandox_terraform_tfstate
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Login to AWS root account</span>
+</span></span><span style=display:flex><span>aws sso login --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create an S3 Bucket for Terraform State</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/create-bucket.html</span>
+</span></span><span style=display:flex><span>aws s3api create-bucket <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --acl private <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --bucket <span style=color:#000>$AWS_TERRAFORM_S3_BUCKET</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --region us-east-1 <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create a DynamoDB Table for Terraform State</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/dynamodb/create-table.html</span>
+</span></span><span style=display:flex><span>aws dynamodb create-table <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --table-name <span style=color:#000>$AWS_TERRAFORM_DYNAMODB_TABLE</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --attribute-definitions <span style=color:#000>AttributeName</span><span style=color:#ce5c00;font-weight:700>=</span>LockID,AttributeType<span style=color:#ce5c00;font-weight:700>=</span>S <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --key-schema <span style=color:#000>AttributeName</span><span style=color:#ce5c00;font-weight:700>=</span>LockID,KeyType<span style=color:#ce5c00;font-weight:700>=</span>HASH <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --provisioned-throughput <span style=color:#000>ReadCapacityUnits</span><span style=color:#ce5c00;font-weight:700>=</span>5,WriteCapacityUnits<span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>5</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Get Caller Identity ARN</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/get-caller-identity.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_IAM_USER_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws sts get-caller-identity <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create IAM Policy for Terraform Backend Auth</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; aws_sts_sandbox_policy_document.json
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>{
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Statement&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Sid&#34;: &#34;SandboxTerraformBackendS3BucketPermissions&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: &#34;s3:ListBucket&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Resource&#34;: &#34;arn:aws:s3:::$AWS_TERRAFORM_S3_BUCKET&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Sid&#34;: &#34;SandboxTerraformBackendS3BlobPermissions&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;s3:GetObject&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;s3:PutObject&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;s3:DeleteObject&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      ],
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Resource&#34;: &#34;arn:aws:s3:::$AWS_TERRAFORM_S3_BUCKET/$AWS_TERRAFORM_S3_BUCKET_PATH&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Sid&#34;: &#34;SandboxTerraformBackendDynamoDBTablePermissions&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;dynamodb:DescribeTable&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;dynamodb:GetItem&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;dynamodb:PutItem&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;dynamodb:DeleteItem&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      ],
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Resource&#34;: &#34;arn:aws:dynamodb:*:*:table/$AWS_TERRAFORM_DYNAMODB_TABLE&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  ]
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create IAM Trust Policy for IAM Role</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; aws_sts_sandbox_role_trust_policy_document.json
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>{
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Statement&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Sid&#34;: &#34;SandboxTerraformTrustPolicy&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Principal&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;AWS&#34;: &#34;$AWS_TERRAFORM_IAM_USER_ARN&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: &#34;sts:AssumeRole&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  ]
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_IAM_POLICY_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-name example-tf-sandbox-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-document file://aws_sts_sandbox_policy_document.json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;Policy.Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-role.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_TERRAFORM_IAM_ROLE_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-tf-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --assume-role-policy-document file://aws_sts_sandbox_role_trust_policy_document.json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;Role.Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/attach-role-policy.html</span>
+</span></span><span style=display:flex><span>aws iam attach-role-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_TERRAFORM_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-tf-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Configure Terraform</span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; backend.conf
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>bucket                       = &#34;$AWS_TERRAFORM_S3_BUCKET&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>key                          = &#34;$AWS_TERRAFORM_S3_BUCKET_PATH&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>region                       = &#34;us-east-1&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>encrypt                      = true
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>dynamodb_table               = &#34;$AWS_TERRAFORM_DYNAMODB_TABLE&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>profile                      = &#34;sso-admin&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>role_arn                     = &#34;$AWS_TERRAFORM_IAM_ROLE_ARN&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>assume_role_duration_seconds = 900
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; terraform.tfvars
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>aws_cli_profile = &#34;sso-admin&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>aws_region      = &#34;us-east-1&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; variables.tf
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>variable &#34;aws_cli_profile&#34; {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  type        = string
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  description = &#34;AWS CLI Profile Name&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>variable &#34;aws_region&#34; {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  type        = string
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  description = &#34;AWS Account Region&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; maint.tf
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>/* AWS S3 managed terraform state - configurations in backend.conf */
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>terraform {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  backend &#34;s3&#34; {}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>/* Proxy AWS Provider */
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>provider &#34;aws&#34; {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  alias   = &#34;example-sso-cli&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  profile = var.aws_cli_profile
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  region  = var.aws_region
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Test Terraform</span>
+</span></span><span style=display:flex><span>terraform init -backend-config<span style=color:#ce5c00;font-weight:700>=</span>backend.conf
+</span></span><span style=display:flex><span>terraform plan
+</span></span><span style=display:flex><span>terraform apply --auto-approve
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div><div class="tab-pane fade" id=tabs-00-02 role=tabpanel aria-labelled-by=tabs-00-02-tab tabindex=0><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Ensure environment variables are set from the Create step</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Tear Down Terraform</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>cd</span> ~/development/test/example_aws_tf_backend
+</span></span><span style=display:flex><span>terraform destroy --auto-approve
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Remove IAM Roles &amp; Policies</span>
+</span></span><span style=display:flex><span>aws iam detach-role-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_TERRAFORM_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-tf-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-tf-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_TERRAFORM_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Remove DynamoDB</span>
+</span></span><span style=display:flex><span>aws dynamodb delete-table <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --table-name <span style=color:#000>$AWS_TERRAFORM_DYNAMODB_TABLE</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Remove S3 Versioned Objects &amp; Bucket</span>
+</span></span><span style=display:flex><span>aws s3api delete-objects <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --bucket <span style=color:#000>$AWS_TERRAFORM_S3_BUCKET</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --delete <span style=color:#4e9a06>&#34;</span><span style=color:#204a87;font-weight:700>$(</span>aws s3api list-object-versions <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --bucket <span style=color:#000>$AWS_TERRAFORM_S3_BUCKET</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --output<span style=color:#ce5c00;font-weight:700>=</span>json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --query<span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#39;{Objects: Versions[].{Key:Key,VersionId:VersionId}}&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span><span style=color:#4e9a06>&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws s3api delete-bucket <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --bucket <span style=color:#000>$AWS_TERRAFORM_S3_BUCKET</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div></div><h2 id=console-steps>Console Steps<a class=td-heading-self-link href=#console-steps aria-label="Heading self-link"></a></h2><h3 id=create-s3-bucket>Create S3 Bucket<a class=td-heading-self-link href=#create-s3-bucket aria-label="Heading self-link"></a></h3><p>Create a Private <a href=https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>S3 Bucket</a> for Terraform <code>tfstate</code>. This will reduce the chance of sensitive data being committed to source code.</p><h3 id=create-dynamodb-table>Create DynamoDB Table<a class=td-heading-self-link href=#create-dynamodb-table aria-label="Heading self-link"></a></h3><p>Create a new <a href=https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/getting-started-step-1.html>DynamoDB Table</a> in AWS with a Partition Key named <a href=https://developer.hashicorp.com/terraform/language/settings/backends/s3#dynamodb-state-locking>LockID</a>.</p><h3 id=create-iam-policy>Create IAM Policy<a class=td-heading-self-link href=#create-iam-policy aria-label="Heading self-link"></a></h3><p><a href=https://developer.hashicorp.com/terraform/language/settings/backends/s3>Configure Terraform Backend</a> to store <code>tfstate</code> to S3 by creating a new policy for AWS service principals authorized with Terraform.</p><pre tabindex=0><code>   {
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: &#34;s3:ListBucket&#34;,
+            &#34;Resource&#34;: &#34;arn:aws:s3:::[INSERT_BUCKET_NAME]&#34;
+        },
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;s3:GetObject&#34;,
+                &#34;s3:PutObject&#34;,
+                &#34;s3:DeleteObject&#34;
+            ],
+            &#34;Resource&#34;: &#34;arn:aws:s3:::[INSERT_BUCKET_NAME]/[INSERT_PATH_KEY]&#34;
+        },
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;dynamodb:DescribeTable&#34;,
+                &#34;dynamodb:GetItem&#34;,
+                &#34;dynamodb:PutItem&#34;,
+                &#34;dynamodb:DeleteItem&#34;
+            ],
+            &#34;Resource&#34;: &#34;arn:aws:dynamodb:*:*:table/[INSERT_TABLE_NAME]&#34;
+        }
+     ]
+   }
+</code></pre><h3 id=create-iam-role-with-trust-policy>Create IAM Role with Trust Policy<a class=td-heading-self-link href=#create-iam-role-with-trust-policy aria-label="Heading self-link"></a></h3><p>Create a new <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-custom.html>IAM Role with Custom Trust Policy</a> to allow the Identity Center user with SSO access to <a href=https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>Assume the Role</a> with the above Policy permissions. Make not of the Role ARN for the next step.</p><pre tabindex=0><code>{
+  &#34;Version&#34;: &#34;2012-10-17&#34;,
+  &#34;Statement&#34;: [
+    {
+      &#34;Sid&#34;: &#34;SandboxTerraformTrustPolicy&#34;,
+      &#34;Effect&#34;: &#34;Allow&#34;,
+      &#34;Principal&#34;: {
+        &#34;AWS&#34;: &#34;[INSERT_IDENTITY_CENTER_USER_ARN]&#34;
+      },
+      &#34;Action&#34;: &#34;sts:AssumeRole&#34;
+    }
+  ]
+}
+</code></pre><h3 id=configure-terraform-backend>Configure Terraform Backend<a class=td-heading-self-link href=#configure-terraform-backend aria-label="Heading self-link"></a></h3><p>Utilize <a href=https://developer.hashicorp.com/terraform/language/backend#partial-configuration>Terraform Partial Configuration</a> which may point to a file with the backend configurations stored in a safer location than hard coding into the <code>main.tf</code> file. Write the contents below into a <code>backend.conf</code> file in the parent directory (and make sure to include into .gitignore).</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#000>bucket</span>                       <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;[INSERT_S3_BUCKET_NAME]&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>key</span>                          <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;[INSERT_S3_BUCKET_PATH]&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>region</span>                       <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;us-east-1&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>encrypt</span>                      <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#204a87;font-weight:700>true</span>
+</span></span><span style=display:flex><span><span style=color:#000>dynamodb_table</span>               <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;[INSERT_DYNAMODB_TABLE_NAME]&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>profile</span>                      <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;sso-admin&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>role_arn</span>                     <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#4e9a06>&#34;[INSERT_IAM_ROLE_ARN]&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#000>assume_role_duration_seconds</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#0000cf;font-weight:700>900</span>
+</span></span></code></pre></div><p>Now Terraform will be configured to store all <code>tfstate</code> in AWS S3 and DynamoDB.</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>terraform init -backend-config<span style=color:#ce5c00;font-weight:700>=</span>backend.conf
+</span></span><span style=display:flex><span>terraform plan
+</span></span><span style=display:flex><span>terraform apply --auto-approve
+</span></span></code></pre></div></div><div class=td-content style=page-break-before:always><h1 id=pg-1d14e8c6f158f84d87904be72d1a74c4>3 - OpenID Connect</h1><div class=lead>AWS - Modernized Security for GitOps & CI/CD where Passwords and Credentials are a Thing of the Past.</div><h1 id=openid-connect-configuration-with-github>OpenID Connect Configuration with Github<a class=td-heading-self-link href=#openid-connect-configuration-with-github aria-label="Heading self-link"></a></h1><p>OpenID Connect (OIDC) is an authentication protocol that enables AWS to securely authenticate users and applications without requiring them to store and manage credentials, allowing for seamless integration with identity providers such as Google, Microsoft, Amazon and Github to providing a seamless and highly secure way to manage access to AWS resources.</p><h2 id=cli-steps>CLI Steps<a class=td-heading-self-link href=#cli-steps aria-label="Heading self-link"></a></h2><ul class="nav nav-tabs justify-content-end" id=tabs-0 role=tablist><li class=nav-item><button class="nav-link disabled" id=tabs-00-00-tab data-bs-toggle=tab data-bs-target=#tabs-00-00 role=tab aria-controls=tabs-00-00 aria-selected=false>
+<strong>Examples</strong>:</button></li><li class=nav-item><button class="nav-link active" id=tabs-00-01-tab data-bs-toggle=tab data-bs-target=#tabs-00-01 role=tab data-td-tp-persist=shell aria-controls=tabs-00-01 aria-selected=true>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI (Create) icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI (Create)</button></li><li class=nav-item><button class=nav-link id=tabs-00-02-tab data-bs-toggle=tab data-bs-target=#tabs-00-02 role=tab aria-controls=tabs-00-02 aria-selected=false>
+<span style=vertical-align:middle><img src="data:image/svg+xml,%3Csvg%20height=%221024%22%20width=%22896%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M831%20127H63c-35.35.0-64%2028.65-64%2064v640c0%2035.35%2028.65%2064%2064%2064h768c35.35.0%2064-28.65%2064-64V191c0-35.35-28.65-64-64-64zM127%20575l128-128L127%20319l64-64%20192%20192L191%20639l-64-64zm512%2064H383v-64h256v64z%22/%3E%3C/svg%3E" alt="CLI (Destroy) icon" style=height:1.5em;vertical-align:middle;margin-right:.3em></span>
+CLI (Destroy)</button></li></ul><div class=tab-content id=tabs-0-content><div class="tab-pane fade" id=tabs-00-00 role=tabpanel aria-labelled-by=tabs-00-00-tab tabindex=0><pre tabindex=0><code></code></pre></div><div class="tab-pane fade show active" id=tabs-00-01 role=tabpanel aria-labelled-by=tabs-00-01-tab tabindex=0><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span>mkdir ~/development/test/example_aws_oidc
+</span></span><span style=display:flex><span><span style=color:#204a87>cd</span> ~/development/test/example_aws_oidc
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Setting</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>GH_REPO</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;your-github-repo-name&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Login to AWS root account</span>
+</span></span><span style=display:flex><span>aws sso login --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create New User</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-user.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_IAM_USER_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-user <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --user-name <span style=color:#000>$GH_REPO</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --query <span style=color:#4e9a06>&#39;User.Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>    --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create IAM Identity Provider for Github Actions</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-open-id-connect-provider.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_IAM_IDENTITY_PROVIDER_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-open-id-connect-provider <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --url <span style=color:#4e9a06>&#34;https://token.actions.githubusercontent.com&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --client-id-list <span style=color:#4e9a06>&#34;sts.amazonaws.com&#34;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --thumbprint-list <span style=color:#4e9a06>&#34;1b511abead59c6ce207077c0bf0e0043b1382612&#34;</span> &gt; create-open-id-connect-provider.json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;OpenIDConnectProviderArn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create IAM Policy for OIDC Access</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; aws_oid_sandbox_policy_document.json
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>{
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Statement&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:GenerateCredentialReport&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:GenerateServiceLastAccessedDetails&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:Get*&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:List*&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:SimulateCustomPolicy&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;iam:SimulatePrincipalPolicy&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      ],
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Resource&#34;: &#34;*&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  ]
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Create IAM Trust Policy for IAM Role</span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span>cat <span style=color:#4e9a06>&lt;&lt;EOT &gt; aws_oidc_sandbox_role_trust_policy_document.json
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>{
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  &#34;Statement&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Principal&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;Federated&#34;: &#34;$AWS_IAM_IDENTITY_PROVIDER_ARN&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: &#34;sts:AssumeRoleWithWebIdentity&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Condition&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;StringLike&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>          &#34;token.actions.githubusercontent.com:sub&#34;: &#34;repo:$GH_REPO/*:ref:refs/heads/main&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;ForAllValues:StringEquals&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>          &#34;token.actions.githubusercontent.com:aud&#34;: &#34;sts.amazonaws.com&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>          &#34;token.actions.githubusercontent.com:iss&#34;: &#34;https://token.actions.githubusercontent.com&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Effect&#34;: &#34;Allow&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Principal&#34;: {
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;AWS&#34;: &#34;$AWS_IAM_USER_ARN&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      },
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Action&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;sts:AssumeRole&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>        &#34;sts:TagSession&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      ],
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>      &#34;Condition&#34;: {}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>    }
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>  ]
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>}
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06>EOT</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_OIDC_IAM_POLICY_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-name example-oidc-sandbox-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-document file://aws_oidc_sandbox_policy_document.json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;Policy.Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-role.html</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>AWS_OIDC_IAM_ROLE_ARN</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87;font-weight:700>$(</span>aws iam create-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-oidc-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --assume-role-policy-document file://aws_oidc_sandbox_role_trust_policy_document.json <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --query <span style=color:#4e9a06>&#39;Role.Arn&#39;</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --output text <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin<span style=color:#204a87;font-weight:700>)</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/attach-role-policy.html</span>
+</span></span><span style=display:flex><span>aws iam attach-role-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_OIDC_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-oidc-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div><div class="tab-pane fade" id=tabs-00-02 role=tabpanel aria-labelled-by=tabs-00-02-tab tabindex=0><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Remove IAM Roles &amp; Policies</span>
+</span></span><span style=display:flex><span>aws iam detach-role-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_OIDC_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-oidc-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --role-name example-oidc-sandbox-role <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-policy <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --policy-arn <span style=color:#000>$AWS_OIDC_IAM_POLICY_ARN</span> <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>aws iam delete-open-id-connect-provider <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --open-id-connect-provider-arn <span style=color:#4e9a06>\
+</span></span></span><span style=display:flex><span><span style=color:#4e9a06></span>  --profile<span style=color:#ce5c00;font-weight:700>=</span>sso-admin
+</span></span><span style=display:flex><span>  </span></span></code></pre></div></div></div><h2 id=console-steps>Console Steps<a class=td-heading-self-link href=#console-steps aria-label="Heading self-link"></a></h2><h3 id=create-github-oidc-iam-account>Create Github OIDC IAM Account<a class=td-heading-self-link href=#create-github-oidc-iam-account aria-label="Heading self-link"></a></h3><p>The <strong>Assume Role</strong> Trust Policies will need to be bound to a specific IAM Account in order to have Github&rsquo;s CICD Action Workflows to both authenticate and assume roles to with enough permissions as required. We will create unique accounts for Read and Write role sets (similar to Terraform&rsquo;s Plan and Apply operations).</p><p>Create a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console>New IAM User</a> <strong>Without</strong> access to AWS Management Console - this user should only be able to access AWS through CLI. We&rsquo;ll repeat this step twice for the following accounts</p><ul><li>github-cicd-service-principal-read</li><li>github-cicd-service-principal-readwrite</li></ul><h3 id=add-identity-provider>Add Identity Provider<a class=td-heading-self-link href=#add-identity-provider aria-label="Heading self-link"></a></h3><p>AWS prodives the following <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html#manage-oidc-provider-console>Identity Provider Setup Instructions</a> on how to access and setup Identity Providers in AWS Console. However, Github&rsquo;s <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html#manage-oidc-provider-console>Adding the Identity Provider to AWS</a> guide provides specific details for configuring OIDC federated access from Github&rsquo;s CICD Action Workflows to AWS.</p><p>Add a new <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html#manage-oidc-provider-console>Identity Provider</a> using the web console. Go to IAM > Identity Provider.</p><ul><li>Select OpenID Connect.</li><li>Input <a href=https://token.actions.githubusercontent.com>https://token.actions.githubusercontent.com</a> in the <strong>Provider URL</strong></li><li>Input sts.amazonaws.com in the <strong>Audience</strong> field</li></ul><h3 id=configure-iam-role-and-trust-policies>Configure IAM Role and Trust Policies<a class=td-heading-self-link href=#configure-iam-role-and-trust-policies aria-label="Heading self-link"></a></h3><p>Create new IAM roles to allow for Federated OIDC authentication with AWS. For additional details, see Github&rsquo;s <a href=github-cicd-service-principal-read>Configuring the Role and Trust Policy</a>.</p><p>Add a new <a href=https://docs.aws.amazon.com/directoryservice/latest/admin-guide/create_role.html>IAM Role</a> using the web console. Go to IAM > Roles.
+For the <em>github-cicd-service-principal-<strong>read</strong></em> account, name the associate role <strong>github-cicd-service-principal-read-sts-role</strong>.</p><ul><li>Attach the <strong>IAMReadOnlyAccess</strong> permission to the new role.</li><li>Add the following <a href=https://aws.amazon.com/blogs/security/how-to-use-trust-policies-with-iam-roles/>Trust Policy</a> to the new role.</li></ul><pre tabindex=0><code>{
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Principal&#34;: {
+                &#34;Federated&#34;: &#34;[COPY AWS IAM IDENTITY PROVIDER ARN]&#34;
+            },
+            &#34;Action&#34;: &#34;sts:AssumeRoleWithWebIdentity&#34;,
+            &#34;Condition&#34;: {
+                &#34;StringLike&#34;: {
+                    &#34;token.actions.githubusercontent.com:sub&#34;: &#34;repo:[GITHUB ORG NAME]/*:ref:refs/heads/main&#34;
+                },
+                &#34;ForAllValues:StringEquals&#34;: {
+                    &#34;token.actions.githubusercontent.com:aud&#34;: &#34;sts.amazonaws.com&#34;,
+                    &#34;token.actions.githubusercontent.com:iss&#34;: &#34;https://token.actions.githubusercontent.com&#34;
+                }
+            }
+        },
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Principal&#34;: {
+                &#34;AWS&#34;: &#34;[COPY AWS IAM ACCOUNT FOR github-cicd-service-principal-read ARN]&#34;
+            },
+            &#34;Action&#34;: [
+                &#34;sts:AssumeRole&#34;,
+                &#34;sts:TagSession&#34;
+            ],
+            &#34;Condition&#34;: {}
+        }
+    ]
+}
+</code></pre><p>For the <em>github-cicd-service-principal-<strong>readwrite</strong></em> account, name the associate role <strong>github-cicd-service-principal-readwrite-sts-role</strong>.</p><ul><li>Attach the <strong>IAMFullAccess</strong> permission to the new role.</li><li>Add the following <a href=https://aws.amazon.com/blogs/security/how-to-use-trust-policies-with-iam-roles/>Trust Policy</a> to the new role.</li></ul><pre tabindex=0><code>
+{
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Principal&#34;: {
+                &#34;Federated&#34;: &#34;[COPY AWS IAM IDENTITY PROVIDER ARN]&#34;
+            },
+            &#34;Action&#34;: &#34;sts:AssumeRoleWithWebIdentity&#34;,
+            &#34;Condition&#34;: {
+                &#34;StringLike&#34;: {
+                    &#34;token.actions.githubusercontent.com:sub&#34;: &#34;repo:[GITHUB ORG NAME]/*:environment:production&#34;
+                },
+                &#34;ForAllValues:StringEquals&#34;: {
+                    &#34;token.actions.githubusercontent.com:aud&#34;: &#34;sts.amazonaws.com&#34;,
+                    &#34;token.actions.githubusercontent.com:iss&#34;: &#34;https://token.actions.githubusercontent.com&#34;
+                }
+            }
+        },
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Principal&#34;: {
+                &#34;AWS&#34;: &#34;[COPY AWS IAM ACCOUNT FOR github-cicd-service-principal-readwrite ARN]&#34;
+            },
+            &#34;Action&#34;: [
+                &#34;sts:AssumeRole&#34;,
+                &#34;sts:TagSession&#34;
+            ],
+            &#34;Condition&#34;: {}
+        }
+    ]
+}
+</code></pre></div></main></div></div><footer class="td-footer row d-print-none"><div class=container-fluid><div class="row mx-md-2"><div class="td-footer__left col-6 col-sm-4 order-sm-1"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title="User mailing list" aria-label="User mailing list"><a target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list"><i class="fa fa-envelope"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title=Twitter aria-label=Twitter><a target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter><i class="fab fa-twitter"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Stack Overflow" aria-label="Stack Overflow"><a target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li></ul></div><div class="td-footer__right col-6 col-sm-4 order-sm-3"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title=GitHub aria-label=GitHub><a target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub><i class="fab fa-github"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title=Slack aria-label=Slack><a target=_blank rel=noopener href=https://example.org/slack aria-label=Slack><i class="fab fa-slack"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Developer mailing list" aria-label="Developer mailing list"><a target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list"><i class="fa fa-envelope"></i></a></li></ul></div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2"><span class=td-footer__copyright>&copy;
+2018&ndash;2025
+<span class=td-footer__authors>Docsy Authors | <a href=https://creativecommons.org/licenses/by/4.0>CC BY 4.0</a> |</span></span><span class=td-footer__all_rights_reserved>All Rights Reserved</span><span class=ms-2><a href=https://policies.google.com/privacy target=_blank rel=noopener>Privacy Policy</a></span></div></div></div></footer></div><script src=/docs_blog/js/main.min.115f19af160d1221e5d7ad0bb0ea2960832ce0857063f349661781f47be40740.js integrity="sha256-EV8ZrxYNEiHl160LsOopYIMs4IVwY/NJZheB9HvkB0A=" crossorigin=anonymous></script>
+<script defer src=/docs_blog/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js integrity="sha256-c0eKfUgHaYrtfjVesj+YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin=anonymous></script>
+<script src=/docs_blog/js/tabpane-persist.js></script></body></html>

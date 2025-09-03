@@ -1,0 +1,104 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=canonical type=text/html href=https://openvers.github.io/docs_blog/docs/data_ingestion/><link rel=alternate type=application/rss+xml href=https://openvers.github.io/docs_blog/docs/data_ingestion/index.xml><meta name=robots content="noindex, nofollow"><link rel="shortcut icon" href=/docs_blog/favicons/favicon.ico><link rel=apple-touch-icon href=/docs_blog/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/docs_blog/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/docs_blog/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/docs_blog/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/docs_blog/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/docs_blog/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/docs_blog/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/docs_blog/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/docs_blog/favicons/android-192x192.png sizes=192x192><title>Data Ingestion & Data Lake | OpenVERS</title><meta name=description content="Overview of data ingestion pattern  and best practices for modern data platforms.
+"><meta property="og:title" content="Data Ingestion & Data Lake"><meta property="og:description" content="Overview of data ingestion pattern  and best practices for modern data platforms.
+"><meta property="og:type" content="website"><meta property="og:url" content="https://openvers.github.io/docs_blog/docs/data_ingestion/"><meta property="og:site_name" content="OpenVERS"><meta itemprop=name content="Data Ingestion & Data Lake"><meta itemprop=description content="Overview of data ingestion pattern  and best practices for modern data platforms.
+"><meta name=twitter:card content="summary"><meta name=twitter:title content="Data Ingestion & Data Lake"><meta name=twitter:description content="Overview of data ingestion pattern  and best practices for modern data platforms.
+"><link rel=preload href=/docs_blog/scss/main.min.44e056411013bf8f18a255176cfb0420600587168abb56228837c1f35a8df1c0.css as=style><link href=/docs_blog/scss/main.min.44e056411013bf8f18a255176cfb0420600587168abb56228837c1f35a8df1c0.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.7.1.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin=anonymous></script></head><body class=td-section><header><nav class="td-navbar js-navbar-scroll" data-bs-theme=dark><div class="container-fluid flex-column flex-md-row"><a class=navbar-brand href=/docs_blog/><span class="navbar-brand__logo navbar-logo"><svg width="128" height="128" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>OpenVERS Icon - White Background</title><desc>A dimensional icon for Open Data Versatility with a white background circle. It features an open deep blue ring and three bright teal lines with an enhanced extruded effect suggesting depth.</desc><style>.fill-none{fill:none}.stroke-linecap-round{stroke-linecap:round}.circle-main-style{stroke:#3b4856;stroke-width:10}.circle-depth-style{stroke:#072a5c;stroke-width:10}.line-main-style{stroke:#009cff;stroke-width:8}.line-depth-style{stroke:#007a8a;stroke-width:8}.line-accent-shadow-style{stroke:#005f6b;stroke-width:2}.bg-circle-style{fill:#fff}</style><circle class="bg-circle-style" cx="50" cy="50" r="50"/><path d="M86.5 51.5a35 35 0 11-35-35" class="fill-none stroke-linecap-round circle-depth-style"/><path d="M85 50A35 35 0 1150 15" class="fill-none stroke-linecap-round circle-main-style"/><g class="fill-none stroke-linecap-round line-accent-shadow-style"><line x1="52.5" y1="52.5" x2="79.5" y2="25.5"/><line x1="52.5" y1="52.5" x2="26.5" y2="37.5"/><line x1="52.5" y1="52.5" x2="52.5" y2="82.5"/></g><g class="fill-none stroke-linecap-round line-depth-style"><line x1="51.5" y1="51.5" x2="78.5" y2="24.5"/><line x1="51.5" y1="51.5" x2="25.5" y2="36.5"/><line x1="51.5" y1="51.5" x2="51.5" y2="81.5"/></g><g class="fill-none stroke-linecap-round line-main-style"><line x1="50" y1="50" x2="77" y2="23"/><line x1="50" y1="50" x2="24" y2="35"/><line x1="50" y1="50" x2="50" y2="80"/></g></svg></span><span class=navbar-brand__name>OpenVERS</span></a><div class="td-navbar-nav-scroll ms-md-auto" id=main_navbar><ul class=navbar-nav><li class=nav-item><a class=nav-link href=/docs_blog/about/><span>About</span></a></li><li class=nav-item><a class=nav-link href=/docs_blog/blog/><span>Blog</span></a></li><li class=nav-item><a class=nav-link href=/docs_blog/community/><span>Community</span></a></li></ul></div><div class="d-none d-lg-block"><div class=td-search><div class=td-search__icon></div><input type=search class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete=off></div></div></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><main class="col-12 col-md-9 col-xl-8 ps-md-5" role=main><div class=td-content><div class="pageinfo pageinfo-primary d-print-none"><p>This is the multi-page printable view of this section.
+<a href=# onclick="return print(),!1">Click here to print</a>.</p><p><a href=/docs_blog/docs/data_ingestion/>Return to the regular view of this page</a>.</p></div><h1 class=title>Data Ingestion & Data Lake</h1><div class=lead>Overview of data ingestion pattern and best practices for modern data platforms.</div><ul><li>1: <a href=#pg-c2113c28ba0a1e1c4c6ea99c61ab177b>AWS | Data Ingestion & Data Lake</a></li></ul><div class=content><h2 id=what-is-data-ingestion>What is Data Ingestion?<a class=td-heading-self-link href=#what-is-data-ingestion aria-label="Heading self-link"></a></h2><p>The initial process of collecting and transporting data from various sources into a storage or processing system, such as a data warehouse, data lake, or analytics platform. It is the foundational step in building data pipelines, enabling organizations to centralize, analyze, and derive insights from their data. Common terminology in this area include:</p><ul><li><strong>Data Ingestion:</strong> The general process of moving data from source systems to a target system.</li><li><strong>Data Lake Ingestion:</strong> Specifically refers to loading data into a data lake, which is a centralized repository for storing raw, unstructured, or structured data at scale.</li><li><strong>Data Hydration:</strong> Sometimes used interchangeably with ingestion, this term emphasizes the process of populating a data store (often a data lake or warehouse) with fresh data.</li><li><strong>Data Pipeline:</strong> A broader term that includes ingestion, transformation, and loading (ETL/ELT) steps.</li><li><strong>Source-to-Target:</strong> Describes the end-to-end flow of data from its origin (source) to its destination (target), often with mapping and transformation logic.</li></ul><h2 id=architecture>Architecture<a class=td-heading-self-link href=#architecture aria-label="Heading self-link"></a></h2><p>A cloud-agnostic pattern for data lake ingestion leverages serverless functions to move data from diverse sources into a centralized data lake, regardless of the underlying cloud provider (AWS, Azure, GCP, etc.). This approach enables organizations to build scalable, event-driven, and cost-effective ingestion pipelines that are portable across cloud platforms.</p><p>A well defined Landing Zone pattern is also strongly encouraged to keep data storage standardized and consistent in the Data Lake. Example of possible landing zones could include Quarantine, Sandbox, Archive, Staging, Encrypted, and Anonymized. For more, see Microsoft’s guidance on <a href=https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/data-lake>Data Lake Zones</a>.</p><p>We recommend adopting the <a href=https://www.databricks.com/glossary/medallion-architecture>Medallion Architecture</a> landing zones, popularized by Databricks, for their clarity, simplicity, and support for robust data governance and analytics workflows.</p><h3 id=pattern-overview>Pattern Overview<a class=td-heading-self-link href=#pattern-overview aria-label="Heading self-link"></a></h3><pre class=mermaid>architecture-beta
+    title Data Ingestion &amp; Data Lake Architecture
+    group source(icon-park-solid:system)[Source System]
+    service sourcedata(iconoir:raw-format)[Source Data] in source
+
+    group cloud(material-symbols:cloud-outline)[Data Ingestion]
+    service cloudtrigger(tabler:timeline-event-plus)[Event Trigger] in cloud
+    service cloudevent(carbon:function)[Event Function] in cloud
+    service datalakebronze(carbon:data-blob)[Bronze of Raw] in cloud
+    service datalakesilver(carbon:data-blob)[Silver of Cleaned] in cloud
+    service datalakegold(carbon:data-blob)[Gold of Ready] in cloud
+
+    junction junctionCenter
+    junction junctionTop
+    junction junctionBottom
+    junction junctionRight
+    
+    sourcedata{group}:R -- L:cloudtrigger{group}
+    cloudtrigger:R -- L:cloudevent
+    cloudevent:R -- L:junctionRight
+    
+    junctionRight:R -- T:junctionTop
+    junctionTop:R -- L:datalakebronze
+
+    junctionRight:R -- L:junctionCenter
+    datalakebronze:B -- T:datalakesilver
+
+    datalakesilver:B -- T:datalakegold</pre><p>This architecture-style diagram shows how multiple source systems feed into an event-driven, serverless ingestion layer, which then lands data in a <em>medallion-zoned</em> data lake.</p><ol><li><strong>Source Systems:</strong> Data originates from various sources such as databases, APIs, SaaS platforms, or file drops.</li><li><strong>Event Trigger:</strong> The arrival of new data (e.g., file upload, message in a queue, API call) triggers a serverless function.</li><li><strong>Serverless Ingestion Function:</strong> The function (e.g., AWS Lambda, Azure Function, Google Cloud Function) extracts the data from the source, performs basic validation or formatting, and writes it to the data lake&rsquo;s landing zone.</li><li><strong>Landing Zone (Bronze/Raw):</strong> Data is first stored in a &ldquo;Bronze&rdquo; or &ldquo;Raw&rdquo; zone within the data lake. This zone contains untransformed, immutable copies of the ingested data, preserving its original fidelity for audit and replay purposes.</li><li><strong>Medallion Architecture:</strong> Downstream processes (often also serverless or orchestrated jobs) read from the Bronze zone, apply cleansing, transformation, and enrichment, and write the results to Silver (cleaned/validated) and Gold (business-ready/aggregated) zones. This &ldquo;medallion&rdquo; pattern supports data quality, lineage, and incremental processing.</li></ol><h3 id=key-characteristics>Key Characteristics<a class=td-heading-self-link href=#key-characteristics aria-label="Heading self-link"></a></h3><ul><li><strong>Cloud Agnostic:</strong> Uses standard serverless and object storage primitives available in all major clouds.</li><li><strong>Event-Driven:</strong> Ingestion is triggered by events, enabling real-time or near-real-time data movement.</li><li><strong>Scalable & Cost-Efficient:</strong> Serverless functions scale automatically and incur costs only when running.</li><li><strong>Modular/ Extensible:</strong> Easilly adoptable across wide range of sources and integration for ETL or ELT style source to target transformations.</li></ul><p>This architecture is widely adopted for modern data platforms, enabling organizations to build robust, maintainable, and future-proof data ingestion pipelines.</p></div></div><div class=td-content style=page-break-before:always><h1 id=pg-c2113c28ba0a1e1c4c6ea99c61ab177b>1 - AWS | Data Ingestion & Data Lake</h1><div class=lead>Overview of data ingestion pattern and best practices in AWS.</div><h2 id=infrastructure>Infrastructure<a class=td-heading-self-link href=#infrastructure aria-label="Heading self-link"></a></h2><p>This deployment provisions a cloud-native, event-driven data ingestion pipeline on AWS, following the medallion architecture (Bronze/Silver/Gold zones) as described in the architecture overview. The infrastructure is modular and reusable, leveraging the Terraform modules found in <a href>AWS HTTP Trigger</a> repo.</p><h3 id=s3-buckets>S3 Buckets<a class=td-heading-self-link href=#s3-buckets aria-label="Heading self-link"></a></h3><p><a href=https://aws.amazon.com/s3/>S3 Cloud Storage</a> buckets are created to form the medallion landing zones for our Data Lake. The buckets are configured with the following minumal security and retention requirements:</p><ul><li>Versioning for data lineage and recovery.</li><li>Server-side encryption using AWS KMS.</li><li>Lifecycle policies for cost management and compliance.</li><li>Public access blocks for security.</li></ul><h3 id=sns-topic>SNS Topic<a class=td-heading-self-link href=#sns-topic aria-label="Heading self-link"></a></h3><p>The AWS <a href=https://aws.amazon.com/sns/>Simple Notification Services</a> is utilized to mesh together data ingestion events with <strong>subscribed</strong> Lambda functions. The SNS topic also supports dead-letter queue (DLQ) - capturing failed Lambda executions and notifications.</p><h3 id=kms-encrypted-secrets>KMS Encrypted Secrets<a class=td-heading-self-link href=#kms-encrypted-secrets aria-label="Heading self-link"></a></h3><p>We provision a custom encryption key for encrypting S3 bucket data and SNS Messages - with policies set to secure access with trusted parties via automatic key rotation.</p><h3 id=aws-lambda-function-serverless-ingestion>AWS Lambda Function (Serverless Ingestion)<a class=td-heading-self-link href=#aws-lambda-function-serverless-ingestion aria-label="Heading self-link"></a></h3><p>A Lambda function is deployed to process new data and hydrate our data lake. Lambda Layers are used to package dependencies (e.g., s3fs, pyarrow), and the function is configured with Environment variables and IAM roles for secure access to S3 and other AWS services.</p></div></main></div></div><footer class="td-footer row d-print-none"><div class=container-fluid><div class="row mx-md-2"><div class="td-footer__left col-6 col-sm-4 order-sm-1"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title="User mailing list" aria-label="User mailing list"><a target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list"><i class="fa fa-envelope"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title=Twitter aria-label=Twitter><a target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter><i class="fab fa-twitter"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Stack Overflow" aria-label="Stack Overflow"><a target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li></ul></div><div class="td-footer__right col-6 col-sm-4 order-sm-3"><ul class=td-footer__links-list><li class=td-footer__links-item data-bs-toggle=tooltip title=GitHub aria-label=GitHub><a target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub><i class="fab fa-github"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title=Slack aria-label=Slack><a target=_blank rel=noopener href=https://example.org/slack aria-label=Slack><i class="fab fa-slack"></i></a></li><li class=td-footer__links-item data-bs-toggle=tooltip title="Developer mailing list" aria-label="Developer mailing list"><a target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list"><i class="fa fa-envelope"></i></a></li></ul></div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2"><span class=td-footer__copyright>&copy;
+2018&ndash;2025
+<span class=td-footer__authors>Docsy Authors | <a href=https://creativecommons.org/licenses/by/4.0>CC BY 4.0</a> |</span></span><span class=td-footer__all_rights_reserved>All Rights Reserved</span><span class=ms-2><a href=https://policies.google.com/privacy target=_blank rel=noopener>Privacy Policy</a></span></div></div></div></footer></div><script type=module async>
+  import mermaid from "https:\/\/cdn.jsdelivr.net\/npm\/mermaid@latest\/dist\/mermaid.esm.min.mjs";
+
+  (function ($) {
+    if ($('.mermaid').length == 0) {
+      mermaid.initialize({ startOnLoad: false });
+      return;
+    }
+
+    var params = {"architecture":{"icons":[{"name":"logos"},{"name":"carbon"},{"name":"icon-park-solid"},{"name":"iconoir"},{"name":"tabler"},{"name":"material-symbols"}]}};
+
+    
+    
+    var norm = function (defaultConfig, params) {
+      var result = {};
+      for (const key in defaultConfig) {
+        const keyLower = key.toLowerCase();
+        if (defaultConfig.hasOwnProperty(key) && params.hasOwnProperty(keyLower)) {
+          if (typeof defaultConfig[key] === "object") {
+            result[key] = norm(defaultConfig[key], params[keyLower]);
+          } else {
+            result[key] = params[keyLower];
+          }
+        }
+      }
+      return result;
+    };
+
+    var settings = norm(mermaid.mermaidAPI.defaultConfig, params);
+    settings.startOnLoad = true;
+    if ($('html[data-bs-theme="dark"]').length) {
+      settings.theme = 'dark';
+    }
+    mermaid.initialize(settings);
+
+    
+    const lightDarkModeThemeChangeHandler = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+          
+          
+          
+          location.reload();
+        }
+      }
+    };
+
+    
+    if (params.architecture && Array.isArray(params.architecture.icons)) {
+      params.architecture.icons.forEach(icon => {
+        mermaid.registerIconPacks([
+          {
+            name: icon.name,
+            loader: () => fetch(`https://unpkg.com/@iconify-json/${icon.name}@1/icons.json`).then(res => res.json())
+          }
+        ]);
+      });
+    }
+
+    const observer = new MutationObserver(lightDarkModeThemeChangeHandler);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-bs-theme']
+    });
+    
+
+  })(jQuery);
+</script><script src=/docs_blog/js/main.min.115f19af160d1221e5d7ad0bb0ea2960832ce0857063f349661781f47be40740.js integrity="sha256-EV8ZrxYNEiHl160LsOopYIMs4IVwY/NJZheB9HvkB0A=" crossorigin=anonymous></script>
+<script defer src=/docs_blog/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js integrity="sha256-c0eKfUgHaYrtfjVesj+YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin=anonymous></script>
+<script src=/docs_blog/js/tabpane-persist.js></script></body></html>
