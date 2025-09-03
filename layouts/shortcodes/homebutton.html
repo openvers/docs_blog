@@ -1,0 +1,9 @@
+{{ $baseURL := urls.Parse $.Site.Params.Baseurl -}}
+{{ $page := .Get "page" }}
+{{ $title := .Get "title" }}
+{{ $class := .Get "class" }}
+
+<a class="btn btn-lg btn-primary me-3 mb-4" href="{{ relURL $baseURL }}{{ $page }}/">  
+    {{ $title }}
+    <i class="{{ $class }}"></i>
+</a>

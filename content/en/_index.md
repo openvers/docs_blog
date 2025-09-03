@@ -3,12 +3,10 @@ title: OpenVERS | Welcome
 ---
 
 {{< blocks/cover title="OpenVERS" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/about/">
-  About <i class="fab fa-github ms-2 "></i>
-</a>
+
+{{< homebutton page="docs" title="Learn More" class="fas fa-arrow-alt-circle-right ms-2" >}}
+{{< homebutton page="about" title="About" class="fab fa-github ms-2" >}}
+
 <p class="lead mt-5"><span>Open Source Versatility &mdash; Data Practioner's Contributions to the Data & Technology Collective</span></p>
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
@@ -16,7 +14,7 @@ title: OpenVERS | Welcome
 
 {{% blocks/lead color="primary" %}}
 
-Are you ready to accelerate your data strategy and stay ahead in the rapidly evolving tech landscape? With open-source technology, the possibilities are endless—and the key to unlocking its full potential lies in the hands of skilled data practitioners. Leverage our versatile and innovation of open-source tools to transform your data workflows - driving greater efficiency, scalability, and performance. Join a community that’s rethinking best-in-class design for the both the beginners, enthusiasts, and modern data-driven enterprise. Let's supercharge your data with open-source power—starting today!
+Are you ready to accelerate your data strategy and stay ahead in the rapidly evolving tech landscape? The possibilities are endless—and the key to unlocking your data's full potential lies in the hands of skilled data practitioners. Leverage our collection of use cases and guides to modernise your data workflows - driving greater efficiency, scalability, and performance. 
 
 {{% /blocks/lead %}}
 
