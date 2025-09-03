@@ -1,0 +1,47 @@
+{{/*
+  Shortcode: icon
+  Description: Renders an inline SVG icon from the Iconify library.
+  Requires: `npm install @iconify/json`
+
+  Usage:
+    {{< icon "mdi:database" >}}
+    {{< icon "fa6-brands:github" class="text-primary" >}}
+    {{< icon "heroicons:arrow-right" size="32" >}}
+*/}}
+{{- $iconName := .Get 0 -}}
+{{- if not $iconName -}}
+  {{- errorf "The 'icon' shortcode requires an icon name (e.g., 'mdi:database')." -}}
+{{- end -}}
+
+{{- $parts := split $iconName ":" -}}
+{{- $iconSet := index $parts 0 -}}
+{{- $iconID := index $parts 1 -}}
+
+{{- $class := .Get "class" -}}
+{{- $size := .Get "size" | default "1em" -}}
+{{- if ne (substr $size -1 1 | findRE "[a-z%]") "" -}}
+  {{- /* Size already has units */ -}}
+{{- else -}}
+  {{- $size = printf "%spx" $size -}}
+{{- end -}}
+
+{{- $jsonPath := printf "node_modules/@iconify/json/json/%s.json" $iconSet -}}
+
+{{- if resources.Exists $jsonPath -}}
+  {{- $iconSetFile := resources.Get $jsonPath -}}
+  {{- $data := $iconSetFile | transform.Unmarshal -}}
+  {{- $iconData := index $data.icons $iconID -}}
+
+  {{- if $iconData -}}
+    {{- $width := $iconData.width | default $data.width | default 24 -}}
+    {{- $height := $iconData.height | default $data.height | default 24 -}}
+    {{- $viewBox := printf "0 0 %d %d" $width $height -}}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ $size }}" height="{{ $size }}" viewBox="{{ $viewBox }}" {{ with $class }}class="{{ . }}"{{ end }} fill="currentColor" aria-hidden="true" role="img">
+      {{ $iconData.body | safeHTML }}
+    </svg>
+  {{- else -}}
+    {{- warnf "Icon '%s' not found in set '%s'." $iconID $iconSet -}}
+  {{- end -}}
+{{- else -}}
+  {{- warnf "Icon set JSON file not found for '%s'. Have you run 'npm install @iconify/json'?" $iconSet -}}
+{{- end -}}

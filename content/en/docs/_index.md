@@ -1,29 +1,9 @@
 ---
 title: Documentation
 linkTitle: Docs
-menu: {main: {weight: 20}}
-weight: 20
+weight: 0
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+Welcome to OpenVERS' official documentation hub for our Data Platform! Whether you're a data scientist, engineer, architect, or just getting started, this resource is designed to help you navigate every aspect of our platform—from setup and integrations to advanced analytics and troubleshooting.
 
-This section is where the user documentation for your project lives - all the
-information your users need to understand and successfully use your project.
-
-For large documentation sets we recommend adding content under the headings in
-this section, though if some or all of them don’t apply to your project feel
-free to remove them or add your own. You can see an example of a smaller Docsy
-documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which
-lives in the [Docsy theme
-repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to
-copy its docs section.
-
-Other content such as marketing material, case studies, and community updates
-should live in the [About](/about/) and [Community](/community/) pages.
-
-Find out how to use the Docsy theme in the [Docsy User
-Guide](https://docsy.dev/docs/). You can learn more about how to organize your
-documentation (and how we organized this site) in [Organizing Your
-Content](https://docsy.dev/docs/best-practices/organizing-content/).
+We aim to provide clear, step-by-step guides that help you get started quickly, troubleshoot issues, and maximize the existing platform & cloud provider capabilities. The documentation empowers users to work efficiently, saving time and reducing the learning curve. It's also structured to be intuitive, allowing you to easily find relevant information—whether you're configuring data pipelines, securing your environment, or exploring visualization tools. Furthermore, it helps you stay compliant with security and regulatory standards through comprehensive guides on security and governance. Ultimately, this documentation ensures you have the knowledge and support to fully leverage modern practices, enabling you to solve data challenges and drive innovation confidently.

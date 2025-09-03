@@ -1,6 +1,49 @@
-/*
+// assets/scss/_variables_project.scss
 
-Add styles or override variables from the theme here.
+// Your OpenVERS Color Palette
+$openvers-primary: #3b4856;
+$openvers-accent: #009cff;
 
-*/
+// --- Theme Color Overrides ---
 
+// Set the primary theme color to your deep blue.
+// This often affects buttons, active states, and other key UI elements.
+$primary: $openvers-primary;
+
+// --- Link Color Overrides ---
+$link-color: $openvers-accent;
+// You can make the hover color a slightly darker or lighter version of the link color.
+// Using a built-in SCSS function `darken()` or `lighten()`:
+$link-hover-color: darken($openvers-accent, 10%);
+// Or, use your lighter teal:
+// $link-hover-color: $openvers-lighter-teal;
+
+
+// --- Optional: Heading Colors ---
+// $headings-color: $openvers-deep-blue; // Make headings use your deep blue
+// $headings-font-weight: 700; // Example: Make headings bolder
+
+// --- Optional: Navbar Customization ---
+// Docsy's navbar can be light or dark. Overriding $primary might already influence it.
+// For more specific control, you might explore variables like:
+// $navbar-light-bg: #f8f9fa; // Default light navbar background
+// $navbar-light-color: rgba(0,0,0,.5);
+// $navbar-light-hover-color: rgba(0,0,0,.7);
+// $navbar-light-active-color: rgba(0,0,0,.9);
+// $navbar-light-brand-color: $navbar-light-active-color;
+
+// If you were to switch to a dark navbar theme (via Docsy config or more SCSS),
+// you could use your blue for its background:
+// $navbar-dark-bg: $openvers-deep-blue;
+// $navbar-dark-color: rgba(255,255,255,.75);
+// $navbar-dark-hover-color: #fff;
+// $navbar-dark-active-color: #fff;
+// $navbar-dark-brand-color: $navbar-dark-active-color;
+
+
+// --- Optional: Sidebar Customization ---
+// $td-sidebar-bg-color: $openvers-darker-deep-blue; // Example: Dark sidebar background
+// $td-sidebar-tree-root-color: $openvers-bright-teal; // Color for top-level sidebar items
+// $td-sidebar-link-active-color: $openvers-bright-teal; // Color for active sidebar link
+
+// Add other Bootstrap/Docsy variable overrides here as needed.
