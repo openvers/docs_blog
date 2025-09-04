@@ -45,7 +45,7 @@
     "@iconify/json": "^2.2.351",
     "autoprefixer": "^10.4.14",
     "cpy-cli": "^5.0.0",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3"
   },
