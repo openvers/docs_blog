@@ -1,20 +1,11 @@
 {{ $_hugo_config := `{ "version": 1 }` -}}
 {{ $blockID := printf "td-cover-block-%d" .Ordinal -}}
-{{ $promo_image := (.Page.Resources.ByType "image").GetMatch "**background*" -}}
 {{ $logo_image := (.Page.Resources.ByType "image").GetMatch "**logo*" -}}
 {{ $col_id := .Get "color" | default "dark" -}}
-{{ $image_anchor := .Get "image_anchor" | default "smart" -}}
 {{ $logo_anchor := .Get "logo_anchor" | default "smart" -}}
 {{/* Height can be one of: auto, min, med, max, full. */ -}}
 {{ $height := .Get "height" | default "max" -}}
 
-{{ with $promo_image -}}
-{{ $promo_image_big := . -}}
-{{ $promo_image_small := . -}}
-{{ if ne $promo_image.MediaType.SubType "svg" -}}
-  {{ $promo_image_big = .Fill (printf "1920x1080 %s" $image_anchor) -}}
-  {{ $promo_image_small = .Fill (printf "960x540 %s" $image_anchor) -}}
-{{ end -}}
 <style>
 #{{ $blockID }}-background {
   position: absolute;
@@ -52,8 +43,8 @@ p.lead.mt-5 span {
     12px 12px 24px 0px rgba(254, 254, 254, 0.77);
 }
 </style>
-{{ end -}}
-<iframe id="{{ $blockID }}-background" src="{{ "cover-background.html" | safeURL }}"></iframe>
+
+<iframe id="{{ $blockID }}-background" src="/cover-background.html"></iframe>
 <section id="{{ $blockID }}" class="row td-cover-block td-cover-block--height-{{ $height -}}
   {{ if not .Site.Params.ui.navbar_translucent_over_cover_disable }} js-td-cover
   {{- end }} td-overlay td-overlay--dark -bg-{{ $col_id }}">
