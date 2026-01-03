@@ -1,0 +1,88 @@
+<svg width="128" height="128" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>OpenVERS Icon - White Background</title>
+  <desc>A dimensional icon for Open Data Versatility with a white background circle. It features an open deep blue ring and three bright teal lines with an enhanced extruded effect suggesting depth.</desc>
+
+  <style>
+    /* Base styles */
+    .fill-none { fill: none; }
+    .stroke-linecap-round { stroke-linecap: round; }
+
+    /* Circle styles */
+    .circle-main-style {
+      stroke: #3b4856; /* Deep Blue - Main color for the circle */
+      stroke-width: 10;
+    }
+    .circle-depth-style {
+      stroke: #072A5C; /* Darker Deep Blue - Depth/shadow for the circle */
+      stroke-width: 10;
+    }
+
+    /* Line styles */
+    .line-main-style {
+      stroke: #009cff; /* Bright Teal/Cyan - Main color for the lines */
+      stroke-width: 8;
+    }
+    .line-depth-style {
+      stroke: #007A8A; /* Darker Teal/Cyan - Depth/shadow for the lines */
+      stroke-width: 8;
+    }
+    .line-accent-shadow-style {
+      stroke: #005F6B; /* Even Darker Teal/Cyan - Accent for shadow edge */
+      stroke-width: 2; /* Thinner stroke for the accent shadow edge */
+    }
+
+    /* Background circle style */
+    .bg-circle-style {
+      fill: white;
+    }
+  </style>
+
+  <!-- White Background Circle (drawn first) -->
+  <circle class="bg-circle-style" cx="50" cy="50" r="50"/>
+
+  <!-- Open Circle Element -->
+  <!-- Depth Layer for the Circle (drawn first) -->
+  <path d="M 86.5 51.5 A 35 35 0 1 1 51.5 16.5"
+        class="fill-none stroke-linecap-round circle-depth-style"/>
+  <!-- Main Layer for the Circle (drawn on top of its depth layer) -->
+  <path d="M 85 50 A 35 35 0 1 1 50 15"
+        class="fill-none stroke-linecap-round circle-main-style"/>
+
+  <!-- Radiating Lines -->
+  <!-- Original line coordinates:
+       Line 1: (50,50) to (77,23)
+       Line 2: (50,50) to (24,35)
+       Line 3: (50,50) to (50,80)
+  -->
+  <!-- Depth line coordinates (shifted by +1.5, +1.5 from original):
+       Line 1 depth: (51.5,51.5) to (78.5,24.5)
+       Line 2 depth: (51.5,51.5) to (25.5,36.5)
+       Line 3 depth: (51.5,51.5) to (51.5,81.5)
+  -->
+  <!-- Accent Shadow line coordinates (shifted by +2.5, +2.5 from original):
+       Line 1 accent: (52.5,52.5) to (79.5,25.5)
+       Line 2 accent: (52.5,52.5) to (26.5,37.5)
+       Line 3 accent: (52.5,52.5) to (52.5,82.5)
+  -->
+
+  <!-- Accent Shadow Layer for Lines (darkest, furthest offset, thinnest - drawn first among line layers) -->
+  <g class="fill-none stroke-linecap-round line-accent-shadow-style">
+    <line x1="52.5" y1="52.5" x2="79.5" y2="25.5"/>
+    <line x1="52.5" y1="52.5" x2="26.5" y2="37.5"/>
+    <line x1="52.5" y1="52.5" x2="52.5" y2="82.5"/>
+  </g>
+
+  <!-- Depth Layer for Lines (darker, standard offset, same width as main - drawn after accent shadow) -->
+  <g class="fill-none stroke-linecap-round line-depth-style">
+    <line x1="51.5" y1="51.5" x2="78.5" y2="24.5"/>
+    <line x1="51.5" y1="51.5" x2="25.5" y2="36.5"/>
+    <line x1="51.5" y1="51.5" x2="51.5" y2="81.5"/>
+  </g>
+
+  <!-- Main Layer for Lines (brightest, no offset - drawn on top) -->
+  <g class="fill-none stroke-linecap-round line-main-style">
+    <line x1="50" y1="50" x2="77" y2="23"/>
+    <line x1="50" y1="50" x2="24" y2="35"/>
+    <line x1="50" y1="50" x2="50" y2="80"/>
+  </g>
+</svg>

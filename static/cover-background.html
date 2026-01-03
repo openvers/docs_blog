@@ -1,0 +1,190 @@
+<html>
+    <header>
+        <script type="x-shader/x-vertex" id="vertexshader">
+            attribute float scale;
+            void main() {
+                vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+                gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+                gl_Position = projectionMatrix * mvPosition;
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragmentshader">
+            uniform vec3 color;
+            void main() {
+                if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+                gl_FragColor = vec4( color, 1.0 );
+            }
+        </script>
+
+        <script type="module">
+            import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
+            import { createNoise3D } from 'https://cdn.skypack.dev/simplex-noise';
+        
+            // Select the canvas from the document
+            const canvReference = document.getElementById("my_canvas");
+        
+            let scene, camera, renderer, points;
+            const noise = createNoise3D();
+        
+            let mouseX = 0, mouseY = 0;
+            let targetX = 0, targetY = 0;
+            const windowHalfX = window.innerWidth;
+            const windowHalfY = window.innerHeight;
+        
+            const waveParams = {
+                width: 200,
+                height: 150,
+                separation: 4, // Distance between points
+                waveAmplitude: 6, // Height of the wave
+                noiseSpeed: 0.5, // Speed of noise animation
+                noiseScale: 0.1,   // Scale of noise applied to the wave
+            };
+        
+            init();
+            animate();
+        
+            function init() {
+                // Create scene and camera
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(
+                    60,
+                    window.innerWidth / window.innerHeight,
+                    15,
+                    1000
+                );
+                camera.position.y = -290;
+                camera.position.z = 100;
+                camera.lookAt(scene.position);
+            
+                // Create renderer
+                renderer = new THREE.WebGLRenderer({
+                    antialias:false,
+                    canvas: canvReference
+                });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                // document.body.appendChild(renderer.domElement);
+            
+                // Create the grid of points
+                const numPointsX = waveParams.width;
+                const numPointsY = waveParams.height;
+                const numPoints = numPointsX * numPointsY;
+            
+                const positions = new Float32Array(numPoints * 3); // X, Y, Z for each point
+                const scales = new Float32Array(numPoints);
+            
+                let i = 0; 
+                let j = 0;
+                for (let ix = 0; ix < numPointsX; ix++) {
+                    for (let iy = 0; iy < numPointsY; iy++) {
+                    positions[i] = ix * waveParams.separation - (numPointsX * waveParams.separation) / 2; // X
+                    positions[i + 1] = iy * waveParams.separation - (numPointsY * waveParams.separation) / 2; // Y
+                    positions[i + 2] = 0; // Z (no offset initially)
+            
+                    scales[j] = 1; // Default scale for points
+            
+                    i += 3;
+                    j++;
+                    }
+                }
+            
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
+            
+                // Create the material for points
+                const material = new THREE.ShaderMaterial({
+                    uniforms: {
+                    color: { value: new THREE.Color( 0xffffff ) },
+                    },
+                    vertexShader: document.getElementById('vertexshader').textContent,
+                    fragmentShader: document.getElementById('fragmentshader').textContent
+                });
+            
+                points = new THREE.Points(geometry, material);
+                scene.add(points);
+            
+                // Handle pointer movement
+                document.addEventListener('pointermove', onPointerMove);
+            
+                // Handle window resizing
+                window.addEventListener('resize', onWindowResize, false);
+            }
+        
+            function onPointerMove(event) {
+                // Update mouse coordinates relative to the window center
+                mouseX = (event.clientX - windowHalfX) * 0.1;
+                mouseY = (event.clientY - windowHalfY) * 0.1;
+            }
+        
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        
+            // Animate the points using Simplex noise
+            function animateWave(time) {
+                targetX = mouseX * 0.005;
+                targetY = mouseY * 0.005;
+            
+                // Smooth camera movement
+                camera.position.x += (targetX - camera.position.x) * 1.75;
+                //camera.position.y = -400
+            
+                camera.lookAt(scene.position);
+            
+                const positions = points.geometry.attributes.position.array;
+                const scales = points.geometry.attributes.scale.array;
+            
+                const numPointsX = waveParams.width;
+                const numPointsY = waveParams.height;
+                let i = 0; let j = 0;
+            
+                for (let ix = 0; ix < numPointsX; ix++) {
+                    for (let iy = 0; iy < numPointsY; iy++) {
+                    // Apply Simplex noise to the Z position
+                    const noiseValue = noise(
+                        ix * waveParams.noiseScale,
+                        iy * waveParams.noiseScale,
+                        time * waveParams.noiseSpeed
+                    );
+            
+                    // Map the noise value to Z position
+                    positions[i + 2] = noiseValue * waveParams.waveAmplitude;
+            
+                    // Scale point size dynamically based on noise
+                    scales[j] = (0.5 + noiseValue) * waveParams.waveAmplitude;
+            
+                    i += 3;
+                    j++;
+                    }
+                }
+            
+                // Notify Three.js to update the positions
+                points.geometry.attributes.position.needsUpdate = true;
+                points.geometry.attributes.scale.needsUpdate = true;
+            }
+        
+            function animate() {
+                requestAnimationFrame(animate);
+            
+                const time = performance.now() * 0.001; // Scale time for smoother animation
+            
+                // Update wave motion
+                animateWave(time);
+            
+                // Render the scene
+                renderer.render(scene, camera);
+            }
+        </script>
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
+    </header>
+    <body>
+        <canvas id="my_canvas"></canvas>
+    </body>
+</html>

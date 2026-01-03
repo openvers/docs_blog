@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="td-content">
+	<h1>{{ .Title }}</h1>
+	{{ if .Content }}<div class="lead">{{ .Content }}</div>{{ end }}
+	{{ $type := .Type }}
+	{{ $context := . }}
+	{{ range $key, $value := .Data.Terms.ByCount }}
+		{{ $termName := $value.Name }}
+		{{ $termCount := $value.Count }}
+		{{ $termLink := printf "/%s/%s" $type ($termName | urlize | lower) }}
+		{{ $termPage := site.GetPage $termLink }}
+		{{ if eq (trim (lower $termName) " ") "terraform" }}
+			<a href="{{ $termPage.Permalink }}" class="btn btn-lg btn-secondary mr-3 mb-3" title="{{ $termName }}">
+				<img src="https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white" alt="{{ $termName }} tag" style="height: 1.2em; vertical-align: middle; margin-right: 4px;"> <span class="badge badge-light">{{ $termCount }}</span>
+			</a>
+		{{ else }}
+			<a href="{{ $termPage.Permalink }}" class="btn btn-lg btn-secondary mr-3 mb-3">
+				{{ $termName }} <span class="badge badge-light">{{ $termCount }}</span>
+			</a>
+		{{ end }}
+	{{ end }}
+	{{ if eq .Kind "taxonomyTerm" }}
+	<div class="section-index">
+    {{ $currentSection := .CurrentSection }}
+    {{ $pages := $currentSection.Pages.ByTitle }}
+    {{ if $currentSection.Params.ui_show_pages_as_cards }}
+      {{ partial "section-index-cards.html" (dict "pages" $pages "context" $context) }}
+    {{ else }}
+      {{ partial "section-index.html" (dict "pages" $pages "context" $context) }}
+    {{ end }}
+	</div>
+	{{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,41 @@
+// assets/scss/project.scss
+
+// 1. Import your custom variables first.
+// This ensures your definitions take precedence.
+@import "variables_project";
+
+
+// You can add more custom project-specific SCSS rules below this line if needed.
+
+// Custom styles for new sidebar section headers
+.td-page-meta > h5, // Targets header in page-meta-links.html
+.td-toc > h5 {      // Targets header in toc.html
+  font-size: 0.9rem;
+  font-weight: 600; // A bit bolder
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e9ecef; // Subtle separator line
+  color: #343a40; // Dark gray, or use your $headings-color if defined
+  // text-transform: uppercase; // Optional: if you want uppercase headers
+}
+
+// Custom styles for the navbar search input
+.td-navbar {
+  .td-search {
+    input[type="search"] {
+      border: 2px solid $openvers-accent;     // Use your accent color (was $openvers-bright-teal)
+      border-radius: 8px;                     // Adjust for desired roundness
+      padding: 0.375rem 0.75rem;              // Default Bootstrap padding, adjust if needed
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; // Smooth transition on focus
+      background-color: #fff;                 // Ensure a white background for the input
+
+      &:focus {
+        // Optional: slightly change border or add a box-shadow on focus
+        border-color: darken($openvers-accent, 10%);
+        box-shadow: 0 0 0 0.2rem rgba($openvers-accent, 0.25); // More conventional focus glow
+      }
+    }
+  }
+}
+
